@@ -23,15 +23,18 @@ Step 1: Data collection from API:
 * It can be changed by alter the function call at the last line.
 * The weather history data is joined with weather station master (../data/all_station_master.csv) to get the latitude and longitude.
 * The results of the file will be saved in ../data/aus_weather_extract.csv
+
 Note: Web API used: http://www.bom.gov.au/climate/dwo/201801/text/IDCJDW2000.201801.csv 
  
 Step 2: Geo Spatial calculations and analysis 
+* run the notebook predict_weather.ipynb
 * Geo Spatial calculations and build toy model to predict weather as PSV file
 * Read the history data loaded as part of step 1 and predict weather by weather station level.
 * Find the closest weather station from all Australian airports.
 * Export the predicted data in with IATA code in the expected format.
 
 Step 3: Data validation
+* Run the scala validation scala_data_validation.ipynb
 * Read the final predicted .psv file
 * Check the results are exported properly to meet the expectations
  
@@ -39,6 +42,13 @@ Step 4: Visualization
 * Quick visualization using pandas and plotly to check the predicted model is making sense.
 * Build report on tableau to check Actuals Vs Predicted
  
- 
+## Tools and Technologies
+* docker
+* scala 
+* spark
+* python
+* pandas
+* R 
+
 ## Acknowledgments
 * jupyter/all-spark-notebook - is used
